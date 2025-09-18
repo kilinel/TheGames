@@ -1,7 +1,7 @@
 /* Variáveis CSS */
 :root {
-    --font-title:  "Russo One", sans-serif;
-    --font-text:  "Quicksand", sans-serif;
+    --font-title: "Russo One", sans-serif;
+    --font-text: "Quicksand", sans-serif;
     --color-light: #f4f4f4;
     --color-blue-300: #32cbd6;
     --color-blue-900: #120D24;
@@ -13,8 +13,21 @@ body {
     font-family: var(--font-text);
 }
 
-h1, h2 , h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-title);
+}
+
+.color-blue-300 {
+    color: var(--color-blue-300);
+}
+
+.color-purple-400 {
+    color: var(--color-purple-400);
 }
 
 /* logo da página */
@@ -24,7 +37,8 @@ h1, h2 , h3, h4, h5, h6 {
     transition: .5s;
 }
 
-.navbar-brand:hover, .navbar-brand:focus {
+.navbar-brand:hover,
+.navbar-brand:focus {
     color: var(--color-light);
 }
 
@@ -55,7 +69,8 @@ h1, h2 , h3, h4, h5, h6 {
     color: var(--color-light);
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--color-blue-300);
 }
 
@@ -64,6 +79,13 @@ h1, h2 , h3, h4, h5, h6 {
     position: relative;
     top: 0;
     min-height: 100vh;
+}
+
+.hero-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bg-video);
     z-index: -1;
 }
 
@@ -76,3 +98,72 @@ h1, h2 , h3, h4, h5, h6 {
     width: 100%;
     object-fit: cover;
 }
+
+/*
+
+CTA
+*/
+
+
+.cta {
+    width: 90%;
+    min-height: 80vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.cta h3 {
+    text-wrap: balance;
+}
+
+.cta-btn-group {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    border: 25px dashed var(--color-blue-300);
+    padding: 5px 10px;
+    min-width: 180px;
+    transform: skew(-20deg);
+    position: relative;
+    
+}
+.btn-link::after{
+    content: '';
+    height: 100%;
+    width: 0;
+    background-color: var(--color-blue-300);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width .5s;
+   
+}
+.btn-link:hover::after{
+    width: 100%;
+}
+
+.btn-link a {
+    transform: skew(20deg);
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-light);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/*
+FIM CTA
+
+*/
